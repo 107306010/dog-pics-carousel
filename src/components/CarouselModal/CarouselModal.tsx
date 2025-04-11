@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { CarouselModalProps } from "@/types";
-import { API_ROUTES } from "@/config";
 import styles from "./carousemodal.module.css";
 
 const CarouselModal = ({ image, startIndex, onClose }: CarouselModalProps) => {
