@@ -65,9 +65,7 @@ const CarouselModal = ({ image, startIndex, onClose }: CarouselModalProps) => {
               <Image
                 key={index}
                 alt="breed"
-                src={`${API_ROUTES.BREED_IMAGE_PROXY}?url=${encodeURIComponent(
-                  img_url
-                )}`}
+                src={img_url}
                 width={300}
                 height={300}
                 className={styles.image}
