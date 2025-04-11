@@ -31,6 +31,7 @@ const BreedImage = ({ breed, image }: BreedImageProps) => {
 
     return () => clearInterval(interval);
   }, [image]);
+  console.log(loadedImages);
 
   return (
     <>
