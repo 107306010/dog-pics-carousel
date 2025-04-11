@@ -1,24 +1,17 @@
-export const dynamic = "force-dynamic";
-
 import { BreedPageProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import BreedImage from "@/components/BreedImage";
 import styles from "./page.module.css";
 import { get_image } from "@/lib/image";
-import { API_ROUTES, API_CONFIG } from "@/config";
+import { getBreedsImages } from "@/app/api/api";
 import Layout from "@/components/Layout";
 
 const BreedPage = async (props: { params: BreedPageProps }) => {
   const { breedname } = await props.params;
 
-  const result = await fetch(
-    `${API_ROUTES.BREED_IMAGE}/${breedname}?count=50`,
-    {
-      next: { revalidate: API_CONFIG.REVALIDATE_TIME },
-    }
-  );
-  const { message } = await result.json();
+  const image = await getBreedsImages(breedname, 50);
+  // const { message } = await result.json();
 
   const breedname_arr = breedname.split("%20");
   const breedname_title =
@@ -36,7 +29,7 @@ const BreedPage = async (props: { params: BreedPageProps }) => {
           <div className="text-3xl w-full text-center">{breedname_title}</div>
         </div>
         <div className={styles.image_grid_wrap}>
-          <BreedImage breed={breedname} image={message} />
+          <BreedImage breed={breedname} image={image} />
         </div>
       </div>
     </Layout>

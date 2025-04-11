@@ -5,6 +5,7 @@ import useSWR from "swr";
 import Image from "next/image";
 import { API_ROUTES, TIME } from "@/config";
 import { BreedListImageProps } from "@/types";
+import { formatBreedName } from "@/lib/utils";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -35,14 +36,12 @@ const BreedListImage = ({ breedname }: BreedListImageProps) => {
     };
   }, []);
 
-  const { data, error } = useSWR(
-    isVisible ? `${API_ROUTES.BREED_IMAGE}/${breedname}?count=1` : null,
-    fetcher,
-    {
-      revalidateOnFocus: false, // whether to request new api when user go back to the page
-      dedupingInterval: TIME.TEN_MINUTES, // the time that do not request new api
-    }
-  );
+  const breedname_url = formatBreedName(breedname);
+  const apiUrl = `${API_ROUTES.DOG_API_URL}/breed/${breedname_url}/images/random/1`;
+  const { data, error } = useSWR(isVisible ? apiUrl : null, fetcher, {
+    revalidateOnFocus: false, // whether to request new api when user go back to the page
+    dedupingInterval: TIME.TEN_MINUTES, // the time that do not request new api
+  });
 
   return (
     <div ref={imgRef}>

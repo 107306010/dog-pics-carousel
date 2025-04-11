@@ -5,7 +5,6 @@ import Image from "next/image";
 import { BreedImageProps } from "@/types";
 import styles from "./breedimage.module.css";
 import CarouselModal from "../CarouselModal";
-import { API_ROUTES } from "@/config";
 
 const BreedImage = ({ breed, image }: BreedImageProps) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -45,9 +44,7 @@ const BreedImage = ({ breed, image }: BreedImageProps) => {
             <Image
               className="w-[95] h-[95] rounded-[10%]"
               alt={breed}
-              src={`${API_ROUTES.BREED_IMAGE_PROXY}?url=${encodeURIComponent(
-                img_url
-              )}`}
+              src={img_url}
               width={95}
               height={95}
               loading="lazy"
