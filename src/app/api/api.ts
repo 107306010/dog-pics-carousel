@@ -1,5 +1,4 @@
-import { NextResponse } from "next/server";
-import { API_ROUTES, API_CONFIG, TIME } from "@/config";
+import { API_ROUTES, API_CONFIG } from "@/config";
 import { DogBreeds } from "@/types";
 import { capitalize, formatBreedName } from "@/lib/utils";
 
