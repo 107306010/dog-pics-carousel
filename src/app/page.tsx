@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { API_ROUTES, API_CONFIG } from "@/config";
 import Layout from "@/components/Layout";
 import SearchBar from "@/components/SearchBar";
