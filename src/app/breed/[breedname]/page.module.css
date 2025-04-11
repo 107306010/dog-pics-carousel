@@ -1,0 +1,36 @@
+.main {
+    width: 100vw;
+    height: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.root {
+    width: 320px;
+}
+.bar {
+    width: 100%;
+    height: 50px;
+    padding: 4px;
+    display: flex;
+    background-color: #3f4454;
+    align-items: center;
+    position: relative;
+}
+.title {
+    height: fit-content;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+.icon {
+    width: 30px;
+    position: absolute;
+}
+.image_grid_wrap {
+    padding: 10px 4px;
+    overflow-y: scroll;
+    height: 70vh;
+}

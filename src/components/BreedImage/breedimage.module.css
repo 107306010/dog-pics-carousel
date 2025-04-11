@@ -1,0 +1,19 @@
+.root {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+    gap: 10px;
+}
+.image_wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.close {
+    position: absolute;
+    top: -25px;
+    right: 0px
+}
+.image {
+    border-radius: 10px;
+}

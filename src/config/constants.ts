@@ -1,0 +1,6 @@
+export const TIME = {
+  ONE_SECOND: 1000,
+  FIVE_SECONDS: 5000,
+  ONE_MINUTE: 60000,
+  TEN_MINUTES: 600000,
+};
